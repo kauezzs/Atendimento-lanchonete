@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema da Lanchonete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tela 1: Login -->
+    <div class="card" id="tela-login">
+        <h1>Sistema da Lanchonete</h1>
+        <p class="erro" id="mensagem-erro" hidden>Senha incorreta!</p>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" autofocus>
+        <button id="btn-entrar">Entrar</button>
+    </div>
+
+    <!-- Tela 2: Cardápio / Pedido -->
+    <div class="card" id="tela-menu" hidden>
+        <h1>Cardápio</h1>
+        <label for="produto">Produto:</label>
+        <select id="produto">
+            <option value="1">Hambúrguer - R$ 15,00</option>
+            <option value="2">Pizza - R$ 20,00</option>
+            <option value="3">Refrigerante - R$ 6,00</option>
+            <option value="4">Batata Frita - R$ 10,00</option>
+        </select>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" min="1" value="1">
+        <button id="btn-adicionar">Adicionar</button>
+
+        <h1>Pedido atual</h1>
+        <ul id="lista-itens"></ul>
+        <p>Subtotal: R$ <span id="subtotal-atual">0,00</span></p>
+        <button id="btn-finalizar">Finalizar pedido</button>
+    </div>
+
+    <!-- Tela 3: Relatório final -->
+    <div class="card" id="tela-relatorio" hidden>
+        <h1>Relatório do pedido</h1>
+        <ul id="lista-registrados"></ul>
+        <p>Quantidade total de itens: <span id="total-itens"></span></p>
+        <p>Subtotal: R$ <span id="relatorio-subtotal"></span></p>
+        <p>Desconto: R$ <span id="relatorio-desconto"></span></p>
+        <p class="total">Total: R$ <span id="relatorio-total"></span></p>
+        <button id="btn-novo-pedido" class="botao">Novo pedido</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
